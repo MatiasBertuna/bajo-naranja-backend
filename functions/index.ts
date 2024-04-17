@@ -4,6 +4,7 @@ import cors from 'cors';
 import indexRoutes from './routes/indexRoutes';
 import userRoutes from './routes/userRoutes'; // Importamos las rutas de usuario
 import { conectarMongoDB } from './config/mongoDB'; // Importamos el método conectarMongoDB
+import serverless from "serverless-http";
 import dotenv from 'dotenv';
 import { sendEmail } from './config/resend'; // Importamos la función para enviar correos electrónicos
 
@@ -77,5 +78,7 @@ class Server {
     }
 }
 
+
 const server = new Server();
+//server.app.use('/.netlify/functions/index', )
 server.start(); //Ejecutamos el metodo start en inica el server
